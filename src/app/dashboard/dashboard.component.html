@@ -1,0 +1,196 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <h1 class="fw-bolder mb-2">Dashboard</h1>
+      <!-- ↓ Add 'mb-1' to reduce bottom margin -->
+      <small class="text-secondary">Tractor Admin Dashboard</small>
+      <div class="row">
+        <div class="input-group mt-4 col-3">
+          <input
+            type="text"
+            class="form-control fs-6"
+            style="width: 100%; max-width: 210px"
+            [placeholder]="todayPlaceholder"
+            bsDaterangepicker
+            [(ngModel)]="daterangepickerModel"
+          />
+          <span class="input-group-text"
+            ><mat-icon class="fs-5">calendar_today</mat-icon></span
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4 text-end">
+      <p>Manoj Singh</p>
+    </div>
+  </div>
+</div>
+
+<!-- Display Cards  -->
+<div class="container mt-2 mb-5">
+  <div class="row">
+    <div class="col">
+      <div class="row">
+        <div class="col-3">
+          <div class="card shadow-sm">
+            <div class="card-body d-flex align-items-center">
+              <!-- Icon Section -->
+              <div
+                class="d-flex align-items-center justify-content-center bg-light rounded-circle"
+                style="width: 60px; height: 60px"
+              >
+                <mat-icon> attach_money</mat-icon>
+
+                <i class="bi bi-currency-dollar fs-3 text-success"></i>
+              </div>
+
+              <!-- Text Section -->
+              <div class="ms-3 text-start">
+                <p class="text-secondary mb-1">Total income</p>
+                <h4 class="mb-0 fs-5">{{ totalIncome | number }}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card shadow-sm">
+            <div class="card-body d-flex align-items-center">
+              <!-- Icon Section -->
+              <div
+                class="d-flex align-items-center justify-content-center bg-light rounded-circle"
+                style="width: 60px; height: 60px"
+              >
+                <mat-icon> local_gas_station</mat-icon>
+                <i class="bi bi-currency-dollar fs-3 text-success"></i>
+              </div>
+
+              <!-- Text Section -->
+              <div class="ms-3 text-start">
+                <p class="text-secondary mb-1">Dieasl</p>
+                <h4 class="mb-0 fs-5">50000</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card shadow-sm">
+            <div class="card-body d-flex align-items-center">
+              <!-- Icon Section -->
+              <div
+                class="d-flex align-items-center justify-content-center bg-light rounded-circle"
+                style="width: 60px; height: 60px"
+              >
+                <mat-icon>payment</mat-icon>
+                <i class="bi bi-currency-dollar fs-3 text-success"></i>
+              </div>
+
+              <!-- Text Section -->
+              <div class="ms-3 text-start">
+                <p class="text-secondary mb-1">Driver Paid</p>
+                <h4 class="mb-0 fs-5">50000</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card shadow-sm">
+            <div class="card-body d-flex align-items-center">
+              <!-- Icon Section -->
+              <div
+                class="d-flex align-items-center justify-content-center bg-light rounded-circle"
+                style="width: 60px; height: 60px"
+              >
+                <mat-icon>trending_up</mat-icon>
+                <i class="bi bi-currency-dollar fs-3 text-success"></i>
+              </div>
+
+              <!-- Text Section -->
+              <div class="ms-3 text-start">
+                <p class="text-secondary mb-1">Profit</p>
+                <h4 class="mb-0 fs-5">50000</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 p-0">
+        <div class="d-flex flex-row gap-1">
+          <button class="btn btn-secondary btn-sm">All</button>
+          <button class="btn btn-light btn-sm">Unpaid</button>
+          <button class="btn btn-light btn-sm">Paid</button>
+          <button class="btn btn-light btn-sm">Add</button>
+        </div>
+      </div>
+      <div class="col-6 p-0">
+        <div class="d-flex flex-row-reverse gap-1">
+          <button class="icon-btn card shadow-lg order-1">
+            <mat-icon>search</mat-icon>
+          </button>
+          <button class="icon-btn card shadow-lg">
+            <mat-icon>more_horiz</mat-icon>
+          </button>
+          <button class="icon-btn card shadow-lg">
+            <mat-icon>notes</mat-icon>
+          </button>
+          <button class="icon-btn card shadow-lg">
+            <mat-icon>unfold_more</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container mt-2">
+  <div class="row">
+    <div class="col">
+      <!-- Header Row -->
+      <div class="card bg-light border-light">
+        <div class="row align-items-center p-2">
+          <div class="col-auto">
+            <input class="form-check-input" type="checkbox" id="selectAll" />
+          </div>
+          <div class="col">Order</div>
+          <div class="col">Date</div>
+          <div class="col">Customer</div>
+          <div class="col">Payment</div>
+          <div class="col">Total(Rs.)</div>
+          <div class="col">Paid(Rs.)</div>
+          <div class="col">Due(Rs.)</div>
+          <div class="col">Action</div>
+        </div>
+      </div>
+
+      <!-- Data Rows -->
+      <div *ngFor="let item of tableData" class="card border-light">
+        <div class="row align-items-center p-2">
+          <div class="col-auto">
+            <input class="form-check-input" type="checkbox" />
+          </div>
+          <div class="col">{{ item.order }}</div>
+          <div class="col">{{ item.date }}</div>
+          <div class="col">{{ item.customer }}</div>
+          <div class="col">
+            <span
+              [ngClass]="
+                item.payment === 'Paid' ? 'text-success' : 'text-warning'
+              "
+              >{{ item.payment }}</span
+            >
+          </div>
+          <div class="col">{{ item.total }}</div>
+          <div class="col">{{ item.paid }}</div>
+          <div class="col">{{ item.due }}</div>
+          <div class="col">{{ item.action }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

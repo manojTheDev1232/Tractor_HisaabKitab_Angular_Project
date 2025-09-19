@@ -1,0 +1,76 @@
+<div class="container d-flex justify-content-center align-items-center">
+  <div *ngIf="!isRegisterClicked" class="login-container">
+    <h3 class="text-center mb-4">Login</h3>
+    <form (ngSubmit)="login()">
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input
+          type="email"
+          [(ngModel)]="loginObj.email"
+          name="email"
+          class="form-control"
+          id="email"
+          placeholder="name@example.com"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          [(ngModel)]="loginObj.password"
+          class="form-control"
+          name="password"
+          id="password"
+          placeholder="Enter your password"
+          required
+        />
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="rememberMe" />
+        <label class="form-check-label" for="rememberMe">Remember me</label>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Login</button>
+      <div class="text-center mt-3">
+        <a href="#">Forgot password?</a>
+        <button class="btn btn-success" (click)="toggle()">Register</button>
+      </div>
+    </form>
+  </div>
+  <div *ngIf="isRegisterClicked" class="login-container">
+    <h3 class="text-center mb-4">Sign Up</h3>
+    <form (ngSubmit)="register()">
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input
+          type="email"
+          [(ngModel)]="signupObj.email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="name@example.com"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          [(ngModel)]="signupObj.password"
+          class="form-control"
+          name="password"
+          id="password"
+          placeholder="Enter your password"
+          required
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Register</button>
+      <div class="text-center mt-3">
+        <button class="btn btn-success" (click)="toggle()">
+          Back to Login
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

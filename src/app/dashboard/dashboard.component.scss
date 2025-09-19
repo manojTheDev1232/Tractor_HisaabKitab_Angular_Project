@@ -1,0 +1,44 @@
+#table-pagination {
+  width: 900px;
+  margin: auto;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.icon-btn {
+  width: 32px;
+  height: 30.6px;
+  padding: 0;
+  border: none;
+  background-color: white; /* or use Bootstrap’s btn-light */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0; /* removes extra spacing from inline elements */
+}
+
+.icon-btn mat-icon {
+  font-size: 20px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card .row > .col,
+.card .row > .col-auto {
+  font-size: 14px;
+  text-align: center;
+}
+.card .row > .col:nth-child(2),
+.card .row > .col:nth-child(3),
+.card .row > .col:nth-child(4),
+.card .row > .col:nth-child(5) {
+  text-align: left;
+}
+.card .col {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.attendence_calender {
+  height: 500px;
+}

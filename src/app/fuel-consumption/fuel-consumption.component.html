@@ -1,0 +1,215 @@
+<div class="container mb-5">
+  <h1 class="fw-bolder mb-2">Fuel Transactions</h1>
+  <small class="text-secondary">Diesel Details</small>
+  <div class="container mt-2 mb-5">
+    <div class="row">
+      <div class="col-9">
+        <div class="row">
+          <div class="col-4">
+            <div class="card shadow-sm">
+              <div class="card-body d-flex align-items-center">
+                <!-- Icon Section -->
+                <div
+                  class="d-flex align-items-center justify-content-center bg-light rounded-circle"
+                  style="width: 60px; height: 60px"
+                >
+                  <mat-icon> attach_money</mat-icon>
+
+                  <i class="bi bi-currency-dollar fs-3 text-success"></i>
+                </div>
+
+                <!-- Text Section -->
+                <div class="ms-3 text-start">
+                  <p class="text-secondary mb-1">Total Spent</p>
+                  <h4 class="mb-0 fs-5">{{ totalIncome | number }}</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card shadow-sm">
+              <div class="card-body d-flex align-items-center">
+                <!-- Icon Section -->
+                <div
+                  class="d-flex align-items-center justify-content-center bg-light rounded-circle"
+                  style="width: 60px; height: 60px"
+                >
+                  <mat-icon> local_gas_station</mat-icon>
+                  <i class="bi bi-currency-dollar fs-3 text-success"></i>
+                </div>
+
+                <!-- Text Section -->
+                <div class="ms-3 text-start">
+                  <p class="text-secondary mb-1">Total Dieasl</p>
+                  <h4 class="mb-0 fs-5">50000</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card shadow-sm">
+              <div class="card-body d-flex align-items-center">
+                <!-- Icon Section -->
+                <div
+                  class="d-flex align-items-center justify-content-center bg-light rounded-circle"
+                  style="width: 60px; height: 60px"
+                >
+                  <mat-icon>payment</mat-icon>
+                  <i class="bi bi-currency-dollar fs-3 text-success"></i>
+                </div>
+
+                <!-- Text Section -->
+                <div class="ms-3 text-start">
+                  <p class="text-secondary mb-1">Transactions</p>
+                  <h4 class="mb-0 fs-5">50000</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="row flex-row mt-5 p-1 scroll-container">
+          <div *ngFor="let item of fuelData" class="card mb-2 custom-card">
+            <div class="card-content">
+              <div class="row justify-content-evenly">
+                <div class="col-6 p-2">
+                  <div class="flex m-1">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    <span class="fs-6 fw-medium">{{ item.date }}</span>
+                    <span class="fs-6 text-muted-foreground"> at 2:45PM</span>
+                    <h3 class="fs-5 fw-medium mt-2">{{ item.gas_station }}</h3>
+                    <div class="flex align-items-center">
+                      <i class="fa fa-map-pin" aria-hidden="true"></i>
+                      <span>{{ item.location }}</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 p-2 text-end">
+                  <div class="row align-items-center">
+                    <div class="col-6 mt-2">
+                      <span class="d-block mb-2">Regular</span>
+                      <p class="mb-2">12.5ltr x 92.7</p>
+                      <p class="mb-0">Cash</p>
+                    </div>
+                    <div class="col-6 text-center">
+                      <p class="fs-3 mt-3">$48.63</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="card mt-5 p-4">
+          <div class="row">
+            <div class="dropdown open">
+              <button
+                class="btn dropdown-toggle"
+                type="button"
+                id="triggerId"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Last 30 days
+              </button>
+              <div class="dropdown-menu" aria-labelledby="triggerId">
+                <button class="dropdown-item" href="#">Last 7 Days</button>
+                <button class="dropdown-item disabled" href="#">
+                  Disabled action
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <!-- Header Row -->
+            <div class="card bg-light border-light rounded-0">
+              <div class="row align-items-center p-2">
+                <div class="col-auto">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="selectAll"
+                  />
+                </div>
+
+                <div class="col">Transaction Date</div>
+                <div class="col">Petrolpump</div>
+                <div class="col">Quantity</div>
+                <div class="col">Amount(Rs.)</div>
+                <div class="col">Actions</div>
+              </div>
+            </div>
+
+            <!-- Data Rows -->
+            <div
+              *ngFor="let item of fuelData"
+              class="card border-light rounded-0"
+            >
+              <div class="row align-items-center p-2">
+                <div class="col-auto">
+                  <input class="form-check-input" type="checkbox" />
+                </div>
+
+                <div class="col">{{ item.date }}</div>
+                <div class="col">{{ item.gas_station }}</div>
+                <div class="col">{{ item.quantity }}</div>
+                <div class="col">
+                  {{ item.amount }}
+                </div>
+                <div class="col">
+                  <mat-icon class="fs-6">edit</mat-icon>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="card shadow-sm">
+          <div class="card-body d-flex align-items-center">
+            <div class="ms-3 text-start">
+              <p class="fs-6 fw-lighter mb-1">Add Transaction</p>
+              <form [formGroup]="form">
+                <div class="row mt-4 flex-column justify-content-between">
+                  <div class="col">
+                    <span class="form-label small">Name of Petrolpump</span>
+                    <input class="form-control" type="text" name="" id="" />
+                  </div>
+                  <div class="col">
+                    <span class="form-label small">Date</span>
+
+                    <input
+                      class="form-control date_picker"
+                      formControlName="date"
+                      type="date"
+                      id=""
+                    />
+                  </div>
+                </div>
+                <div class="row justify-content-between mt-2">
+                  <div class="col">
+                    <span class="form-label small">Quantity(ltr.)</span>
+
+                    <input class="form-control" type="number" name="" id="" />
+                  </div>
+                  <div class="col">
+                    <span class="form-label small">Total Bill</span>
+
+                    <input class="form-control" type="number" name="" id="" />
+                  </div>
+                </div>
+                <div class="row mt-4 text-end">
+                  <div class="col">
+                    <button class="btn btn-success">Add</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

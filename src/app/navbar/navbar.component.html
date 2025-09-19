@@ -1,0 +1,41 @@
+<div class="d-flex flex-column vh-100 p-3 bg-light shadow" style="width: 250px">
+  <a
+    href="/"
+    class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none"
+  >
+    <span class="fs-4">Tractor Hisaab</span>
+  </a>
+  <hr />
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item">
+      <a
+        routerLink="/dashboard"
+        class="nav-link text-dark"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Dashboard
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/fuel-consumption"
+        class="nav-link text-dark"
+        routerLinkActive="active"
+        >Diesel Transactions</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/driver-info"
+        class="nav-link text-dark"
+        routerLinkActive="active"
+      >
+        Driver Info
+      </a>
+    </li>
+    <li>
+      <button class="btn btn-success" (click)="logout()">Logout</button>
+    </li>
+  </ul>
+</div>

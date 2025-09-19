@@ -1,0 +1,26 @@
+.card {
+}
+
+.card:hover {
+  // transform: scale(1.01); /* Zoom effect */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  // background-color: #f8f9fa; /* Optional: change background */
+}
+
+.scroll-container {
+  max-height: 500px; /* Adjust based on your card height x 4 */
+  overflow-y: auto;
+  position: relative;
+}
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background: white; /* or your container's background */
+  z-index: 10;
+  padding: 0.5rem 0;
+  margin-bottom: 0.5rem;
+}
+.date_picker {
+  padding: 10px;
+  font-size: 14px;
+}
