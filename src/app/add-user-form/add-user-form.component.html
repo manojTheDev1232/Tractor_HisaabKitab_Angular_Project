@@ -1,0 +1,60 @@
+<!-- <form>
+  <div class="mb-3">
+    <label for="farmerName" class="form-label">Farmer Name</label>
+    <input type="text" class="form-control" id="farmerName" />
+  </div>
+  <div class="mb-3">
+    <label for="date" class="form-label">Date</label>
+    <input type="date" class="form-control" id="date" />
+  </div>
+  <div class="mb-3">
+    <label for="village" class="form-label">Village</label>
+    <input type="text" class="form-control" id="village" />
+  </div>
+  <div class="mb-3">
+    <label for="workType" class="form-label">Type of Work</label>
+    <mat-select class="form-control" [(value)]="selectedOption">
+      <mat-option *ngFor="let opt of options" [value]="opt.value">
+        {{ opt.viewValue }}
+      </mat-option>
+    </mat-select>
+  </div>
+</form> -->
+
+<div class="ms-3 text-start">
+  <p class="fs-6 fw-lighter mb-1">Add Record</p>
+  <form>
+    <div class="row mt-4 flex-column justify-content-between">
+      <div class="col mb-3">
+        <span class="form-label">Farmer Name</span>
+        <input class="form-control" type="text" name="" id="" />
+      </div>
+      <div class="col">
+        <span class="form-label small">Date</span>
+
+        <input
+          class="form-control date_picker"
+          formControlName="date"
+          type="date"
+          id=""
+        />
+      </div>
+    </div>
+    <div class="row justify-content-between mt-2">
+      <div class="col">
+        <span class="form-label small">Village</span>
+        <input class="form-control" type="number" name="" id="" />
+      </div>
+      <div class="col">
+        <span class="form-label small">Total Bill</span>
+
+        <input class="form-control" type="number" name="" id="" />
+      </div>
+    </div>
+    <div class="row mt-4 text-end">
+      <div class="col">
+        <button class="btn btn-success">Add</button>
+      </div>
+    </div>
+  </form>
+</div>

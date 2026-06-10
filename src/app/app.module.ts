@@ -14,6 +14,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FuelConsumptionComponent } from './fuel-consumption/fuel-consumption.component';
 import { DriverComponent } from './driver/driver.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
+import { AddUserFormComponent } from './add-user-form/add-user-form.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -24,6 +28,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     DisplayCardComponent,
     FuelConsumptionComponent,
     DriverComponent,
+    AddUserFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,8 +37,11 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     FormsModule,
     BsDatepickerModule,
     BrowserAnimationsModule,
+    MatDialogModule,
     ReactiveFormsModule,
     FullCalendarModule,
+    MatFormFieldModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
